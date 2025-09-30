@@ -1,0 +1,27 @@
+import streamlit as st
+from src.password_generator import PinGenerator, RandomPasswordGenerator, MemorabalePasswordGenerator
+
+st.title(":closed_lock_with_key: Password Generator")
+
+
+option = st.radio(
+    "Please select your password type:",
+    ("Random Password", "Memorable Password", "Pin Code")
+)
+
+if option == 'Pin Code':
+    length = st.slider("Please select the length of your pin code.", 4, 32)
+    generator = PinGenerator(length)
+elif option == "Random Password":
+    length = st.slider("Select the length of your password.", 8, 64)
+    include_numbers = st.toggle("Include Numbers")
+    include_symbols = st.toggle("Ïnclude Symbols")    
+    generator = RandomPasswordGenerator(length, include_numbers, include_symbols)
+elif option == "Memorable Password":
+    num_of_words = st.slider("Number of words", 2, 8)
+    seperator = st.text_input("Separator")
+    capitalize = st.toggle("Capitalize")
+    generator = MemorabalePasswordGenerator(num_of_words,seperator, capitalize)
+
+password = generator.generate()
+st.write(f"Your password is: {password}")
