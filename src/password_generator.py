@@ -35,11 +35,11 @@ class MemorabalePasswordGenerator(PasswordGenerator):
   def __init__(
     self,
     num_of_words=4,
-    seperator="-",
+    separator="-",
     capitalize=False,
   ):
     self.num_of_words = num_of_words
-    self.seperator = seperator
+    self.separator = separator
     self.capitalize = capitalize
 
   def generate(self):
@@ -47,4 +47,4 @@ class MemorabalePasswordGenerator(PasswordGenerator):
     if self.capitalize:
       password_words = [word.upper() if random.choice((True, False)) else word.lower() for word in password_words]
 
-    return self.seperator.join(password_words)  
+    return self.separator.join(password_words)  
