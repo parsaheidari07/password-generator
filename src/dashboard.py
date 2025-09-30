@@ -25,9 +25,9 @@ elif option == "Random Password":
     generator = RandomPasswordGenerator(length, include_numbers, include_symbols)
 elif option == "Memorable Password":
     num_of_words = st.slider("Number of words", 2, 8)
-    seperator = st.text_input("Separator", value='-')
+    separator = st.text_input("Separator")
     capitalize = st.toggle("Capitalize")
-    generator = MemorabalePasswordGenerator(num_of_words,seperator, capitalize)
+    generator = MemorabalePasswordGenerator(num_of_words,separator, capitalize)
 
 password = generator.generate()
 st.write(f"Your password is: {password}")
