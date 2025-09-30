@@ -21,7 +21,7 @@ if option == 'Pin Code':
 elif option == "Random Password":
     length = st.slider("Select the length of your password.", 8, 64)
     include_numbers = st.toggle("Include Numbers")
-    include_symbols = st.toggle("Ïnclude Symbols")    
+    include_symbols = st.toggle("Include Symbols")    
     generator = RandomPasswordGenerator(length, include_numbers, include_symbols)
 elif option == "Memorable Password":
     num_of_words = st.slider("Number of words", 2, 8)
