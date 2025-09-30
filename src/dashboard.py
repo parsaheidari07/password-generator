@@ -1,5 +1,5 @@
 import streamlit as st
-from src.password_generator import PinGenerator, RandomPasswordGenerator, MemorabalePasswordGenerator
+from password_generator import PinGenerator, RandomPasswordGenerator, MemorabalePasswordGenerator
 
 st.title(":closed_lock_with_key: Password Generator")
 
