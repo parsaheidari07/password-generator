@@ -1,5 +1,11 @@
+import nltk
 import streamlit as st
 from password_generator import PinGenerator, RandomPasswordGenerator, MemorabalePasswordGenerator
+
+try:
+    nltk.data.find('corpora/words')
+except LookupError:
+    nltk.download('words')
 
 st.title(":closed_lock_with_key: Password Generator")
 
